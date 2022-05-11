@@ -5,7 +5,7 @@
 import Cocoa
 
 class Location {
-	var location: String! = nil
+	var location: String
 	
 	init(location: String) {
 		self.location = location
