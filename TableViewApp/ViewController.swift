@@ -63,6 +63,14 @@ class ViewController: NSViewController {
 	
 extension ViewController: NSTableViewDataSource {
 	
+	func tableViewSelectionDidChange(_ notification: Notification) {
+		if let tableView: NSTableView = notification.object as? NSTableView {
+			let row: Int = tableView.selectedRow
+			
+			print(self.list[row].location)
+		}
+	}
+	
 	func numberOfRows(in tableView: NSTableView) -> Int {
 		return self.list.count
 	}
