@@ -63,14 +63,6 @@ class ViewController: NSViewController {
 	
 extension ViewController: NSTableViewDataSource {
 	
-	func tableViewSelectionDidChange(_ notification: Notification) {
-		if let tableView: NSTableView = notification.object as? NSTableView {
-			let row: Int = tableView.selectedRow
-			
-			print(self.list[row].location)
-		}
-	}
-	
 	func numberOfRows(in tableView: NSTableView) -> Int {
 		return self.list.count
 	}
@@ -87,6 +79,16 @@ extension ViewController: NSTableViewDataSource {
 }
 
 extension ViewController: NSTableViewDelegate {
+	
+	func tableViewSelectionDidChange(_ notification: Notification) {
+		if let tableView: NSTableView = notification.object as? NSTableView {
+			let selectionIndexes: IndexSet = tableView.selectedRowIndexes
+			
+			selectionIndexes.forEach { (index) in
+				print(self.list[index].location)
+			}
+		}
+	}
 	
 	func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
 		return 24.0
