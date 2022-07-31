@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C1F431E28961245002972E7 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1F431D28961245002972E7 /* AppKit.framework */; };
 		7CA65CCC281A4C6700894773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA65CCB281A4C6700894773 /* AppDelegate.swift */; };
 		7CA65CCE281A4C6700894773 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA65CCD281A4C6700894773 /* ViewController.swift */; };
 		7CA65CD0281A4C6900894773 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA65CCF281A4C6900894773 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C1F431D28961245002972E7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		7CA65CC8281A4C6700894773 /* TableViewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA65CCB281A4C6700894773 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA65CCD281A4C6700894773 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,17 +29,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1F431E28961245002972E7 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C1F431C28961244002972E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F431D28961245002972E7 /* AppKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7CA65CBF281A4C6700894773 = {
 			isa = PBXGroup;
 			children = (
 				7CA65CCA281A4C6700894773 /* TableViewApp */,
 				7CA65CC9281A4C6700894773 /* Products */,
+				7C1F431C28961244002972E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
