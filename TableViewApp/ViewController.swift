@@ -67,33 +67,6 @@ extension ViewController: NSTableViewDataSource {
 		return self.list.count
 	}
 	
-	func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-		let tableCellView: NSTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TableCellView"), owner: nil) as! NSTableCellView
-		let titleTextField: NSTextField = tableCellView.viewWithTag(1) as! NSTextField
-		
-		titleTextField.stringValue = self.list[row].location
-		
-		return tableCellView
-	}
-
-}
-
-extension ViewController: NSTableViewDelegate {
-	
-	func tableViewSelectionDidChange(_ notification: Notification) {
-		if let tableView: NSTableView = notification.object as? NSTableView {
-			let selectionIndexes: IndexSet = tableView.selectedRowIndexes
-			
-			selectionIndexes.forEach { (index) in
-				print(self.list[index].location)
-			}
-		}
-	}
-	
-	func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-		return 24.0
-	}
-	
 	func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet) {
 		
 		if self.draggingDestinationFeedbackStyleRegular {
@@ -153,6 +126,32 @@ extension ViewController: NSTableViewDelegate {
 			return true
 		} else {
 			return false
+		}
+	}
+}
+
+extension ViewController: NSTableViewDelegate {
+	
+	func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+		return 24.0
+	}
+	
+	func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+		let tableCellView: NSTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TableCellView"), owner: nil) as! NSTableCellView
+		let titleTextField: NSTextField = tableCellView.viewWithTag(1) as! NSTextField
+		
+		titleTextField.stringValue = self.list[row].location
+		
+		return tableCellView
+	}
+	
+	func tableViewSelectionDidChange(_ notification: Notification) {
+		if let tableView: NSTableView = notification.object as? NSTableView {
+			let selectionIndexes: IndexSet = tableView.selectedRowIndexes
+			
+			selectionIndexes.forEach { (index) in
+				print(self.list[index].location)
+			}
 		}
 	}
 	
